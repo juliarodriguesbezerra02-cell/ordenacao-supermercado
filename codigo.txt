@@ -2,13 +2,13 @@
 
 #define TAM 10
 
-// Estrutura que representa um produto do supermercado.
+
 typedef struct {
     char nome[30];
     float preco;
 } Produto;
 
-// Mostra os produtos e seus preços.
+
 void mostrarProdutos(Produto produtos[], int tamanho) {
     for (int i = 0; i < tamanho; i++) {
         printf("%-20s R$ %.2f\n",
@@ -16,8 +16,8 @@ void mostrarProdutos(Produto produtos[], int tamanho) {
     }
 }
 
-// Bubble Sort: compara os preços de produtos vizinhos.
-// Se estiverem fora de ordem, troca os produtos de posição.
+
+
 void bubbleSort(Produto produtos[], int tamanho) {
     for (int i = 0; i < tamanho - 1; i++) {
         for (int j = 0; j < tamanho - 1 - i; j++) {
@@ -30,8 +30,7 @@ void bubbleSort(Produto produtos[], int tamanho) {
     }
 }
 
-// Particiona os produtos usando o último preço como pivô.
-// Os preços menores ou iguais ao pivô ficam à esquerda.
+
 int particionar(Produto produtos[], int inicio, int fim) {
     float pivo = produtos[fim].preco;
     int i = inicio - 1;
@@ -53,8 +52,7 @@ int particionar(Produto produtos[], int inicio, int fim) {
     return i + 1;
 }
 
-// Quick Sort: divide os produtos em partes menores,
-// organiza cada parte recursivamente e combina o resultado.
+
 void quickSort(Produto produtos[], int inicio, int fim) {
     if (inicio < fim) {
         int pivo = particionar(produtos, inicio, fim);
